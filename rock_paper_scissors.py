@@ -39,13 +39,16 @@ round_result = ["draw", "You Win", "Computer Wins"]
 
 player_choice = int(input("what do you choose? Type 0 for Rock, 1 for Paper or 2 Scissors: "))
 
-print(visual[player_choice])
+if player_choice in [0,1,2]:
+  print(visual[player_choice])
 
-computer_choice = random.randint(0, 2)
+  computer_choice = random.randint(0, 2)
 
-print("Computer Chose: \n")
-print(visual[computer_choice])
+  print("Computer Chose: \n")
+  print(visual[computer_choice])
 
-result = rules[player_choice][computer_choice]
+  result = rules[player_choice][computer_choice]
 
-print(round_result[result])
+  print(round_result[result])
+else:
+  print("invalid input")
