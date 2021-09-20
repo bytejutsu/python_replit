@@ -2,24 +2,24 @@ from replit import clear
 from art import logo
 
 
-bider_dictionary = {}
+bidder_dictionary = {}
 
-def get_max_bider(bider_dictionary):
-  max_bider = "", 0
-  for name,price in bider_dictionary.items():
-    if price >= max_bider[1]:
-      max_bider = name, price
+def get_max_bider(bidder_dictionary):
+  max_bidder = "", 0
+  for name,price in bidder_dictionary.items():
+    if price >= max_bidder[1]:
+      max_bidder = name, price
 
-  print(f"the winner is: {max_bider[0]}")
+  print(f"the winner is: {max_bidder[0]}")
     
 
 def main():
   name = input("what is your name ? : \n")
   price = float(input("what price do you bid ? : \n"))
 
-  bider_dictionary[name] = price
+  bidder_dictionary[name] = price
 
-  other_bider = input("is there another person who wants to bid ? : \n")
+  other_bidder = input("is there another person who wants to bid ? : \n")
 
   clear()
 
@@ -27,7 +27,7 @@ def main():
   if other_bider in "yes":
     main()
   else:
-    get_max_bider(bider_dictionary)  
+    get_max_bidder(bidder_dictionary)  
 
 print(logo)
 main()
