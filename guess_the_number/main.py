@@ -30,7 +30,7 @@ def main(goal_number, difficulty):
     attempts -= 1
     if(attempts == 0):
       print(f"you didn't guess the right number it is {goal_number}")
-      break
+      return
     print(f"you have {attempts} attempts left")
 
 print(logo)    
