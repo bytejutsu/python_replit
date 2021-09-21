@@ -1,13 +1,16 @@
 import random
 from art import logo 
 
+EASY_LEVEL_TURNS = 10
+HARD_LEVEL_TURNS = 5
+
 difficulties = ["easy", "hard"]
 
 def set_number_of_attempts(difficultie):
   if difficultie == "easy":
-    return 10
+    return EASY_LEVEL_TURNS
   else:
-    return 5
+    return HARD_LEVEL_TURNS
 
 def check_entered_number(my_number, goal_number):
   if my_number < goal_number:
@@ -32,7 +35,8 @@ def main(goal_number, difficulty):
 
 print(logo)    
 difficulty = input("type easy for easy difficulty and hard for hard difficulty: ")  
-goal_number = random.choice(range(100))  
+goal_number = random.randint(1, 100)  
 
 main(goal_number, difficulty)    
+ 
 
