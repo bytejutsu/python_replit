@@ -4,17 +4,20 @@ from game_data import data
 from replit import clear
 
 
-def person_intro(name, description, country):
-  return f"{name} a {description} from {country}"
+def person_intro(person):
+  return f"{person['name']} a {person['description']} from {person['country']}"
 
 def person_vs_display(person_a, person_b):
-  person_a_intro = person_intro(person_a["name"],person_a["description"],person_a["country"])
+  person_a_intro = person_intro(person_a)
 
-  person_b_intro = person_intro(person_b["name"],person_b["description"],person_b["country"])
+  person_b_intro = person_intro(person_b)
 
   print(f"Compare A: {person_a_intro}")
   print(vs)
   print(f"Against B: {person_b_intro}")
+
+def loss_display(other_person, answer_person):
+  print(f"you lose {other_person['name']} has {other_person['follower_count']} m followers while {answer_person['name']} has only {answer_person['follower_count']} m followers") 
 
 def game(person_a, person_b, score, pool):
 
@@ -50,6 +53,6 @@ def game(person_a, person_b, score, pool):
     score += 1
     game(person_a = answer_person, person_b = None, score = score, pool = pool)
   else:
-    print(f"you lose {other_person['name']} has {other_person['follower_count']} m followers while {answer_person['name']} has only {answer_person['follower_count']} m followers")  
+     loss_display(other_person, answer_person)
 
 game(person_a = None,person_b = None, score = 0, pool = data)  
